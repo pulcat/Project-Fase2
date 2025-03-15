@@ -1,0 +1,10 @@
+- createTable.sql
+- createTable_ProvedorProducto.sql
+- upd_inserts.sql
+- insert_Cliente.sql
+- insert_Marca
+- insert_Promo
+- insert_Sucursal
+- insert_ClienteDireccion
+- insert_Empleado
+- insert_Proveedor
