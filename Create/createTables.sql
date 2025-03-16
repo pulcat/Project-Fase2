@@ -269,7 +269,9 @@ BEGIN
         facturaId INT,
         productoId INT,
         cantidad INT CHECK (cantidad >= 0),
-        precioPor DECIMAL(10,2)			
+        precioPor DECIMAL(10,2)	,
+		FOREIGN KEY (facturaId) REFERENCES Factura(Id),
+		FOREIGN KEY (productoId) REFERENCES Producto(Id)
     );
 END;
 
