@@ -17,6 +17,8 @@ BEGIN	--tabla temporal
     SET oo.facturaId = f.FacturaID
     FROM OrdenOnline oo
     JOIN inserted ins ON oo.nroOrden = ins.nroOrden
-    JOIN @FacturaIDs f ON f.FacturaID = ( SELECT MAX(FacturaID) 
-											FROM @FacturaIDs); 
+	JOIN @FacturaIDs f ON f.FacturaID = (SELECT TOP 1 id 
+										FROM Factura 
+										WHERE clienteId = ins.clienteId 
+										ORDER BY id DESC);
 END ;
