@@ -1,4 +1,4 @@
-SELECT Producto.nombre "Nombre", Categoria.nombre "Categoria", Marca.nombre "Marca"
+SELECT distinct Producto.nombre "Nombre", Categoria.nombre "Categoria", Marca.nombre "Marca"
 FROM Producto
 join Categoria on Categoria.id = Producto.categoriaId
 join Marca on Marca.id = Producto.marcaId
