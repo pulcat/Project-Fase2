@@ -1,4 +1,4 @@
-CREATE TRIGGER verificador_promo
+CREATE TRIGGER tr_verificadorpromo
 ON FacturaPromo
 AFTER INSERT
 AS
@@ -9,12 +9,12 @@ BEGIN
     DECLARE @FechaEmisionFactura date;
     DECLARE @TipoPromocion varchar(20);
 
-	IF (SELECT vf.facturaId
+	IF NOT EXISTS (SELECT vf.facturaId
 		FROM Factura f , Promo p , VentaFisica vf , OrdenOnline oo , inserted i
-		WHERE i.facturaId = f.id AND f.id = vf.facturaId)=null
+		WHERE i.facturaId = f.id AND f.id = vf.facturaId)
 		SET @TipoCompra='Online';
 		ELSE
-		SET @TipoCompra='Física';
+		SET @TipoCompra='Fisica';
 
 	SELECT 
 	@FechaFinPromo = p.fechaFin,
