@@ -1,0 +1,2 @@
+INSERT INTO Promo (nombre, slogan, codigo, tipoDescuento, valorDescuento, fechaInicio, fechaFin, tipoPromocion)
+VALUES ('Verano EN GaMa', 'Descuentos de verano', 'VERANO2023', 'Porcentaje', 20.00, '2023-06-01', '2023-08-31', 'Online');
